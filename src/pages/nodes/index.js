@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import Header from '../../components/Header';
 import { Tabs } from 'antd';
-
-import { formatMessage } from 'umi/locale';
 const TabPane = Tabs.TabPane;
 
 class Nodes extends Component {
@@ -94,9 +92,9 @@ class Nodes extends Component {
         <div className="container base-card ">
           <div className="nodes-card">
             <Tabs activeKey={current} className="tx-static-tabs" onChange={this.changeTab}>
-              <TabPane tab={formatMessage({ id: 'PastElections' })} key="1"></TabPane>
+              <TabPane tab={'11'} key="1"></TabPane>
               {/* 往期节点竞选结果  */}
-              <TabPane tab={formatMessage({ id: 'ElectionCycleResults' })} key="2"></TabPane>
+              <TabPane tab={'222'} key="2"></TabPane>
             </Tabs>
           </div>
         </div>

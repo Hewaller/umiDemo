@@ -6,7 +6,7 @@ import { connect } from 'dva';
 import router from 'umi/router';
 import { Menu, Collapse, message } from 'antd';
 
-import { formatMessage, setLocale, getLocale, FormattedMessage } from 'umi/locale';
+import { setLocale, getLocale } from 'umi/locale';
 
 import { feedback } from '../../services/index';
 const Panel = Collapse.Panel;
@@ -117,12 +117,12 @@ class Header extends Component {
         if (values.conn && values.advice) {
           feedback(values).then(res => {
             if (res && res[0] === '000000') {
-              message.success(formatMessage({ id: 'HEAD_FORM_SUCCESS' }), 2);
+              message.success('sucess', 2);
               me.setState({
                 visibleAdvice: false,
               });
             } else {
-              message.eror(formatMessage({ id: 'HEAD_FORM_ERROR' }), 2);
+              message.eror('error', 2);
             }
           });
         }
@@ -165,27 +165,25 @@ class Header extends Component {
               </div>
             </div>
             <div className={styles.mobileSearch}>
-              <input
-                onChange={e => this.handleSearchInput(e)}
-                type="text"
-                placeholder={formatMessage({ id: 'HEAD_SEARCH' })}
-              />
+              <input onChange={e => this.handleSearchInput(e)} type="text" placeholder={'search'} />
               <i onClick={this.handleSearchSubmit} className={styles.mobileSearchIcon}></i>
             </div>
             <Menu onClick={this.handleClick} selectedKeys={[this.state.current]}>
               <Menu.Item key="index" onClick={this.closeMobileMenu}>
                 <Link to="/">
-                  <FormattedMessage id="HEAD_HOME" />
+                  {/* <FormattedMessage id="HEAD_HOME" /> */}
+                  'index'
                 </Link>
               </Menu.Item>
               <Menu.Item key="nodes" onClick={this.closeMobileMenu}>
                 <Link to="/nodes">
-                  <FormattedMessage id="HEAD_NODES" />
+                  {/* <FormattedMessage id="HEAD_NODES" /> */}
+                  nodes
                 </Link>
               </Menu.Item>
             </Menu>
             <Collapse defaultActiveKey={['1']} expandIconPosition="right">
-              <Panel header={formatMessage({ id: 'HEAD_LANGUAGE_TITLE' })} key="1">
+              <Panel header={'lang'} key="1">
                 <div className={styles.mobileMenuLanguage}>
                   <p
                     className={getLocale() === 'zh-CN' ? styles.mobileMenuActive : ''}
@@ -203,10 +201,12 @@ class Header extends Component {
               </Panel>
             </Collapse>
             <p onClick={() => this.setAdviceVisible(true)} className={styles.mobileMenuQA}>
-              <FormattedMessage id="HEAD_FEEDBACK" />
+              {/* <FormattedMessage id="HEAD_FEEDBACK" /> */}
+              FEEDBACK
             </p>
             <p onClick={() => this.setModalVisible(true)} className={styles.mobileMenuQA}>
-              <FormattedMessage id="HEAD_INDICATORS" />
+              {/* <FormattedMessage id="HEAD_INDICATORS" /> */}
+              INDICATORS
             </p>
           </div>
           {/* PC 导航栏 */}
@@ -223,12 +223,14 @@ class Header extends Component {
               >
                 <Menu.Item key="index">
                   <Link to="/">
-                    <FormattedMessage id="HEAD_HOME" />
+                    {/* <FormattedMessage id="HEAD_HOME" /> */}
+                    index
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="nodes">
                   <Link to="/nodes">
-                    <FormattedMessage id="HEAD_NODES" />
+                    {/* <FormattedMessage id="HEAD_NODES" /> */}
+                    nodes
                   </Link>
                 </Menu.Item>
                 {/* PC端导航栏 */}
