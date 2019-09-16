@@ -1,0 +1,184 @@
+.header {
+  width: 100%;
+  height: 50px;
+  background: #232938;
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.08);
+}
+.headerBlock {
+  height: 50px;
+}
+.logoContainer {
+  float: left;
+  margin-top: 14px;
+}
+.headerMenu {
+  float: left;
+  border-bottom: none;
+  background: none;
+}
+.searchContainer {
+  float: right;
+  margin-top: 14px;
+}
+.searchInput {
+  display: inline-block;
+}
+.language {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 23px;
+}
+.language:hover {
+  color: #fff !important;
+}
+.languageIcon {
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  margin-right: 7px;
+}
+.componentHeaderMobile {
+  display: none;
+  padding: 0 30px;
+  overflow: hidden;
+  position: relative;
+}
+.headerMobileMenu {
+  float: right;
+  line-height: 50px;
+}
+.headerMenuIcon {
+  display: inline-block;
+  width: 18px;
+  height: 14px;
+  background: url('../../assets/images/menu-m.png') no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.headerMenuIconClose {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url('../../assets/images/close.png') no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.mobileMenu {
+  width: 100%;
+  height: 100%;
+  padding: 0 28px 30px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  background: #232938;
+  z-index: 100;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s;
+  overflow-y: auto;
+  &.active {
+    transform: translate(0, 0);
+  }
+  .componentHeaderMobile {
+    padding: 0;
+  }
+}
+.mobileSearch {
+  position: relative;
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #404c64;
+    width: 100%;
+    color: #fff;
+    padding: 10px 30px 10px 10px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    &::placeholder {
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(156, 158, 185, 1);
+      line-height: 17px;
+    }
+  }
+}
+.mobileSearchIcon {
+  display: block;
+  width: 19px;
+  height: 19px;
+  background: url('../../assets/images/search.png') no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+.mobileMenuLanguage {
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(156, 158, 185, 1);
+  line-height: 17px;
+}
+.mobileMenuQA {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(156, 158, 185, 1);
+  line-height: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+.feedback {
+  width: 224px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 200;
+  top: 95px;
+  right: 0;
+  padding: 20px 10px 0;
+}
+.feedbackTitle {
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(63, 65, 93, 1);
+  line-height: 17px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.inline {
+  border-top: 1px solid #66688f;
+  margin-top: -4px;
+}
+@media screen and (max-width: 768px) {
+  .feedback {
+    width: 358px;
+    height: 345px;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .componentHeaderPC {
+    display: none;
+  }
+  .header {
+    height: 50px;
+  }
+  .componentHeaderMobile {
+    display: block;
+  }
+  .mobileMenuActive {
+    color: #fff;
+  }
+}
