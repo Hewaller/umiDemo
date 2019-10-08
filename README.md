@@ -1,7 +1,7 @@
 ## init
 
- npm i
+yarn
 
 ## start dev
 
-npm start
+yarn start
