@@ -1,7 +1,7 @@
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
-  routes: [{ path: '/', component: './index' }, { path: '/nodes', component: './nodes/index' }],
+  // routes: [{ path: '/', component: './index' }, { path: '/nodes', component: './nodes/index' }],
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     [
@@ -10,7 +10,7 @@ export default {
         antd: true,
         dva: true,
         dynamicImport: { webpackChunkName: true },
-        title: 'scantest',
+        title: 'umiDemo',
         dll: true,
         locale: {
           enable: true,
